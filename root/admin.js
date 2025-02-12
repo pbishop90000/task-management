@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
     }
 
+    async function fetchUsersFromDatabase() {
+        try {
+            const response = await fetch('/api/users'); // Adjust the URL to your API endpoint
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const users = await response.json();
+            return users;
+        } catch (error) {
+            console.error('Failed to fetch users:', error);
+            return [];
+        }
+    }
+
     function initializeAdminPanel() {
         const container = document.querySelector('.container');
         container.innerHTML = `
@@ -102,6 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
+
+        // Fetch users from the database and populate the table
+    fetchUsersFromDatabase().then(users => {
+        populateUserTable(users);
+    });
 
         // Add styles for modal
         const modalStyle = document.createElement('style');
@@ -376,8 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Modify the table headers and row generation
-        function populateUserTable() {
-            const users = JSON.parse(localStorage.getItem('users')) || [];
+        function populateUserTable(users) {
+            const userTableBody = document.getElementById('userTableBody');
             userTableBody.innerHTML = users.map(user => `
                 <tr>
                     <td>${user.username}</td>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .ticket-list {
+            margin-top: 20px;
+        }
+        .ticket-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ticket-status {
+            font-weight: bold;
+        }
+        .ticket-status.open {
+            color: #4CAF50;
+        }
+        .ticket-status.closed {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Technical Support</h1>
+            <div class="header-actions">
+                <a href="welcome.html" class="back-btn">Dashboard</a>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <div id="ticketsTab" class="support-tab-content active">
+            <div id="supportForm">
+                <h2>Submit a Support Ticket</h2>
+                <textarea id="supportMessage" placeholder="Describe your technical issue or support request..." required></textarea>
+                <button id="submitSupportTicketBtn">Submit Ticket</button>
+            </div>
+
+            <div id="supportTickets" class="ticket-list">
+                <h2>Your Support Tickets</h2>
+                <div id="ticketContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="support.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-header {
+            position: relative;
+        }
+        .header-actions {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 10px;
+        }
+        .logout-btn, .back-btn {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container admin-panel">
+        <div class="dashboard-header">
+            <h1>Admin Panel</h1>
+            <div class="header-actions">
+                <button id="backToDashboardBtn" class="back-btn">Dashboard</button>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Users will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <!-- Modal for Add/Edit User -->
+        <div id="userModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modalTitle">Add/Edit User</h2>
+                <form id="userForm">
+                    <input type="text" id="modalUsername" placeholder="Username" required>
+                    <input type="text" id="modalName" placeholder="Full Name">
+                    <input type="password" id="modalPassword" placeholder="Password">
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Password View Modal -->
+        <div id="passwordModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>User Password</h2>
+                <p>Username: <span id="passwordUsername"></span></p>
+                <div class="password-section">
+                    <label for="currentPassword">Current Password:</label>
+                    <input type="text" id="currentPassword" readonly>
+                </div>
+                <div class="password-section">
+                    <label for="newPassword">New Password:</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+                </div>
+                <button id="updatePasswordBtn">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

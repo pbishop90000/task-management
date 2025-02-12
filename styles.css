@@ -1,0 +1,500 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 900px;
+    max-width: 95%;
+    margin: auto;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#taskDashboard, .admin-panel {
+    width: 1200px;
+    max-width: 98%;
+}
+
+.dashboard-tabs, .support-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.tab-btn, .support-tab {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.tab-btn.active {
+    background-color: #4CAF50;
+    color: black;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.header-actions .back-btn {
+    background-color: #4CAF50;
+    color: black;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.profile-btn {
+    background-color: #2196F3;
+    color: black;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.header-actions .support-btn {
+    background-color: #2196F3;
+    color: black;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#messageContainer, #messageChatArea {
+    min-height: 500px;
+}
+
+#messagesContainer, .message-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+#homeworkForm, #courseForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#homeworkForm input, #homeworkForm textarea, #homeworkForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#homeworkForm textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#tasks li, .user-list-item, .chat-list-item {
+    padding: 15px;
+}
+
+#tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tasks li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.task-actions {
+    display: flex;
+}
+
+.task-actions button {
+    width: auto;
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+.complete-btn {
+    color: black;
+}
+
+.delete-btn {
+    color: black;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.form-toggle {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-toggle a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-toggle a:hover {
+    text-decoration: underline;
+}
+
+#completedTaskSection {
+    margin-top: 20px;
+    display: none;
+}
+
+#completedTaskSection details {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#completedTaskSection summary {
+    padding: 10px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#completedTasks {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#completedTasks li {
+    background-color: #f9f9f9;
+    color: #888;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: black;
+    width: auto;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.update-btn {
+    background-color: #4CAF50;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.admin-delete-btn {
+    background-color: #f44336;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.admin-delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+#userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#userTable th, #userTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#userTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.password-section {
+    margin: 10px 0;
+}
+
+.password-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.password-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#updatePasswordBtn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#updatePasswordBtn:hover {
+    background-color: #45a049;
+}
+
+.view-password-btn {
+    background-color: #2196F3;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-password-btn:hover {
+    background-color: #0b7dda;
+}
+
+.homework-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.homework-item details {
+    margin-top: 10px;
+}
+
+.homework-item summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ticket-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ticket-actions button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.ticket-actions button:hover {
+    background-color: #45a049;
+}
+
+.reopen-ticket-btn {
+    background-color: #2196F3 !important;
+}
+
+.reopen-ticket-btn:hover {
+    background-color: #0b7dda !important;
+}
+
+#resolvedTicketsSection {
+    margin-top: 20px;
+}
+
+#resolvedTicketsSection summary {
+    background-color: #f4f4f4;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.message-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.message-actions button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit-message-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.edit-message-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.edit-message-actions button {
+    flex-grow: 1;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel-edit-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.chat-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-chat-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.delete-chat-btn:hover {
+    background-color: #d32f2f;
+}
+
+.chat-list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.chat-info-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.chat-primary-info {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat-secondary-info {
+    margin-right: 10px;
+}
+
+.chat-info-icon-container {
+    margin-left: auto;
+}
+
+.chat-info-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-info-btn svg {
+    color: #2196F3;  
+    width: 20px;
+    height: 20px;
+}
+
+.chat-info-btn:hover svg {
+    color: #1976D2;  
+}

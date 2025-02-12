@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="taskDashboard">
+            <div class="dashboard-header">
+                <h1>Welcome, <span id="userGreeting"></span></h1>
+                <div class="header-actions">
+                    <a href="profile.html" class="profile-btn">Profile</a>
+                    <a href="support.html" class="support-btn">Support</a>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+            
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="tasks">Tasks</button>
+                <button class="tab-btn" data-tab="homework">Homework</button>
+                <button class="tab-btn" data-tab="courses">Courses</button>
+                <button class="tab-btn" data-tab="messages">Messages</button>
+                <a href="admin.html" id="adminPanelLink" class="tab-btn" style="display:none;">Admin Panel</a>
+            </div>
+
+            <div id="tasksTab" class="tab-content active">
+                <div id="taskInput">
+                    <input type="text" id="newTaskInput" placeholder="Enter a new task">
+                    <button id="addTaskBtn">Add Task</button>
+                </div>
+
+                <div id="taskList">
+                    <h2>Your Tasks</h2>
+                    <ul id="tasks"></ul>
+                </div>
+
+                <div id="completedTaskSection">
+                    <details>
+                        <summary>Completed Tasks</summary>
+                        <ul id="completedTasks"></ul>
+                    </details>
+                </div>
+            </div>
+
+            <div id="homeworkTab" class="tab-content">
+                <div id="homeworkForm">
+                    <h2>Add Homework Assignment</h2>
+                    <input type="text" id="homeworkName" placeholder="Assignment Name" required>
+                    <select id="homeworkCourse">
+                        <option value="">Select Course</option>
+                    </select>
+                    <input type="date" id="homeworkDueDate" placeholder="Due Date">
+                    <textarea id="homeworkDescription" placeholder="Assignment Description"></textarea>
+                    <select id="homeworkPriority">
+                        <option value="">Select Priority</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                    <button id="addHomeworkBtn">Add Homework</button>
+                </div>
+
+                <div id="homeworkList">
+                    <h2>Homework Assignments</h2>
+                    <ul id="homeworkItems"></ul>
+                </div>
+
+                <div id="completedHomeworkSection">
+                    <details>
+                        <summary>Completed Homework</summary>
+                        <ul id="completedHomeworkItems"></ul>
+                    </details>
+                </div>
+            </div>
+
+            <div id="coursesTab" class="tab-content">
+                <div id="courseForm">
+                    <h2>Add Course</h2>
+                    <input type="text" id="courseName" placeholder="Course Name (e.g., Biology)" required>
+                    <input type="text" id="courseInstructor" placeholder="Instructor Name">
+                    <button id="addCourseBtn">Add Course</button>
+                </div>
+
+                <div id="courseList">
+                    <h2>Your Courses</h2>
+                    <ul id="courses"></ul>
+                </div>
+            </div>
+
+            <div id="messagesTab" class="tab-content">
+                <div id="messageContainer">
+                    <div id="userListSection">
+                        <h2>Your Messages</h2>
+                        <input type="text" id="recipientSearchInput" placeholder="Search recipients...">
+                        <div id="recipientDropdown" class="recipient-dropdown"></div>
+                        <div id="existingChatsList" class="user-list">
+                            <!-- Dynamically populated list of chats -->
+                        </div>
+                    </div>
+                    <div id="chatSection" style="display:none;">
+                        <div class="recipient-display">
+                            <button id="backToRecipientsBtn">&larr; Back to Chats</button>
+                            Chatting with: <span id="currentRecipient"></span>
+                        </div>
+                        <div id="messagesList" class="message-list">
+                            <div id="messagesContainer"></div>
+                        </div>
+                        <div id="messageForm">
+                            <textarea id="messageInput" placeholder="Type your message here..." required></textarea>
+                            <button id="sendMessageBtn">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="welcome.js"></script>
+</body>
+</html>
